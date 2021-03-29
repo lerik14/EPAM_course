@@ -1,12 +1,14 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OptionalTask1 {
 
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static int[] inputElem() throws IOException {
+    public static int[] getElementsArrayFromConsole() throws IOException {
         System.out.println("Enter the number of elements:");
         int numberOfElements = Integer.parseInt(reader.readLine());
         int[] array = new int[numberOfElements];
@@ -17,29 +19,27 @@ public class OptionalTask1 {
         return array;
     }
 
-    public static void findShortElement(int[] array) {
-        int shortElem = array[0];
+    public static int findShortestElement(int[] array) {
+        int shortestElement = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (array[i] < shortElem) {
-                shortElem = array[i];
+            if (array[i] < shortestElement) {
+                shortestElement = array[i];
             }
         }
-        System.out.println("The shortest element is " + shortElem);
-        System.out.println("The length of this element is " + elemLength(shortElem));
+        return  shortestElement;
     }
 
-    public static void findLongElement(int[] array) {
-        int longElem = array[0];
+    public static int findLongestElement(int[] array) {
+        int longestElement = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (array[i] > longElem) {
-                longElem = array[i];
+            if (array[i] > longestElement) {
+                longestElement = array[i];
             }
         }
-        System.out.println("The longest element is " + longElem);
-        System.out.println("The length of this element is " + elemLength(longElem));
+        return  longestElement;
     }
 
-    public static void sort(int[] array) {
+    public static void sortByLength(int[] array) {
         System.out.println("Elements sorted by length");
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -65,18 +65,21 @@ public class OptionalTask1 {
         return elemLength;
     }
 
-    public static void outputByAverageLength(int[] array) {
+    public static List<Integer> elementsLongerThanAverageLength(int[] array, double averageLength) {
+        List<Integer> elementsLongerThanAverageLength = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            if (elemLength(array[i]) > averageLength) {
+               elementsLongerThanAverageLength.add(array[i]);
+            }
+        }
+        return elementsLongerThanAverageLength;
+    }
+
+    public static double averageLength(int[] array) {
         int commonLength = 0;
         for (int i = 0; i < array.length; i++) {
             commonLength += elemLength(array[i]);
         }
-        double averageLength = (double) commonLength / array.length;
-        System.out.println("Elements longer than average length: ");
-        for (int i = 0; i < array.length; i++) {
-            if (elemLength(array[i]) > averageLength) {
-                System.out.print(array[i] + " ");
-            }
-        }
-        System.out.println("\nThe average length is " + averageLength);
+        return (double) commonLength / array.length;
     }
 }
