@@ -12,14 +12,14 @@ public class Task1 {
     public static void task1() {
         String inputFileName = "java_collections_block/optional_tasks/src/main/resources/Input_file_for_task1.txt";
         String outputFileName = "java_collections_block/optional_tasks/src/main/resources/Output_file_for_task1.txt";
-        List<String> listOfFileLines = new ArrayList<>();
+        List<String> listOfFileLines;
 
         try {
             BufferedReader br = Files.newBufferedReader(Paths.get(inputFileName));
             //br returns as stream and convert it into a List
             listOfFileLines = br.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalStateException("Cannot read file", e);
         }
 
         Collections.reverse(listOfFileLines);
