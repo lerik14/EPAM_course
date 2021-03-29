@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,5 +29,16 @@ public class HouseUtils {
                 .stream()
                 .filter(house -> house.getNumberOfRooms() == numberOfRooms && house.getFloor() >= minFloor && house.getFloor() <= maxFloor)
                 .collect(Collectors.toList());
+    }
+
+    public static int readIntFromConsole() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int number;
+        try {
+            number = Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            throw new IllegalStateException("Cannot parse input string to integer", e);
+        }
+        return number;
     }
 }

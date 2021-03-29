@@ -55,43 +55,30 @@ public class Main { //Main tasks in Java Classes block
 
         // a) список квартир, имеющих заданное число комнат;
         System.out.println("Enter the number of rooms:");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            int  numberOfRooms = Integer.parseInt(reader.readLine());
-            List<House> byNumberOfRoomsHouseList = HouseUtils.getHousesByNumberOfRooms(numberOfRooms, initialHouseList);
-            for (House house : byNumberOfRoomsHouseList) {
-                System.out.println(house.toString());
-            }
-        } catch (IOException e) {
-            throw new IllegalStateException("Cannot find houses with the entered number of rooms", e);
+        int  numberOfRooms = HouseUtils.readIntFromConsole();
+        List<House> byNumberOfRoomsHouseList = HouseUtils.getHousesByNumberOfRooms(numberOfRooms, initialHouseList);
+        for (House house : byNumberOfRoomsHouseList) {
+            System.out.println(house.toString());
         }
 
         //c) список квартир, имеющих площадь, превосходящую заданную.
         System.out.println("Enter the minimum square value:");
-        try {
-            int  minSquare = Integer.parseInt(reader.readLine());
-            List<House> withSquareGreaterThanHouseList = HouseUtils.getHousesWithSquareGreaterThan(minSquare, initialHouseList);
-            for (House house : withSquareGreaterThanHouseList) {
-                System.out.println(house.toString());
-            }
-        } catch (IOException e) {
-            throw new IllegalStateException("Cannot find houses with square greater than the entered value", e);
+        int  minSquare = HouseUtils.readIntFromConsole();
+        List<House> withSquareGreaterThanHouseList = HouseUtils.getHousesWithSquareGreaterThan(minSquare, initialHouseList);
+        for (House house : withSquareGreaterThanHouseList) {
+            System.out.println(house.toString());
         }
 
         //b) список квартир, имеющих заданное число комнат и расположенных на этаже, который находится в заданном промежутке;
         System.out.println("Enter the number of rooms:");
-        try {
-            int  numberOfRooms = Integer.parseInt(reader.readLine());
-            System.out.println("Enter the minimum floor:");
-            int minFloor = Integer.parseInt(reader.readLine());
-            System.out.println("Enter the maximum floor:");
-            int maxFloor = Integer.parseInt(reader.readLine());
-            List<House> byNumberOfRoomsAndFloorHouseList = HouseUtils.getHousesByNumberOfRoomsAndFloor(numberOfRooms, minFloor, maxFloor, initialHouseList);
-            for (House house : byNumberOfRoomsAndFloorHouseList) {
-                System.out.println(house.toString());
-            }
-        } catch (IOException e) {
-            throw new IllegalStateException("Cannot find houses with the entered number of rooms and floor", e);
+        numberOfRooms = HouseUtils.readIntFromConsole();
+        System.out.println("Enter the minimum floor:");
+        int minFloor = HouseUtils.readIntFromConsole();
+        System.out.println("Enter the maximum floor:");
+        int maxFloor = HouseUtils.readIntFromConsole();
+        List<House> byNumberOfRoomsAndFloorHouseList = HouseUtils.getHousesByNumberOfRoomsAndFloor(numberOfRooms, minFloor, maxFloor, initialHouseList);
+        for (House house : byNumberOfRoomsAndFloorHouseList) {
+            System.out.println(house.toString());
         }
     }
 }
