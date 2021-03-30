@@ -10,14 +10,14 @@ public class Task2 {
 
     public static void task2() {
         System.out.println("Input number: ");
-        String inputNumber = "";
+        String inputNumber;
         StringBuilder outputNumber = new StringBuilder();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         try {
             inputNumber = reader.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalStateException("Cannot read line", e);
         }
 
         char[] inputNumberArr = inputNumber.toCharArray();

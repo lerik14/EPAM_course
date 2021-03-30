@@ -18,7 +18,7 @@ public class Salad {
     @Override
     public String toString() {
         return "Salad{" +
-                "saladName='" + saladName + '\'' +
+                "saladName='" + saladName +
                 ", ingredientsWithWeightInGr=" + ingredientsWithWeightInGr +
                 '}';
     }

@@ -27,7 +27,7 @@ public class Task1 {
         try {
             Files.write(Paths.get(outputFileName), listOfFileLines);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalStateException("Cannot write into file", e);
         }
     }
 }
