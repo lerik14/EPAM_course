@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
@@ -55,19 +52,15 @@ public class ClassesMainTaskMain { //Main tasks in Java Classes block
 
         // a) список квартир, имеющих заданное число комнат;
         System.out.println("Enter the number of rooms:");
-        int  numberOfRooms = HouseUtils.readIntFromConsole();
+        int numberOfRooms = HouseUtils.readIntFromConsole();
         List<House> byNumberOfRoomsHouseList = HouseUtils.getHousesByNumberOfRooms(numberOfRooms, initialHouseList);
-        for (House house : byNumberOfRoomsHouseList) {
-            System.out.println(house.toString());
-        }
+        HouseUtils.outputList(byNumberOfRoomsHouseList);
 
         //c) список квартир, имеющих площадь, превосходящую заданную.
         System.out.println("Enter the minimum square value:");
-        int  minSquare = HouseUtils.readIntFromConsole();
+        int minSquare = HouseUtils.readIntFromConsole();
         List<House> withSquareGreaterThanHouseList = HouseUtils.getHousesWithSquareGreaterThan(minSquare, initialHouseList);
-        for (House house : withSquareGreaterThanHouseList) {
-            System.out.println(house.toString());
-        }
+       HouseUtils.outputList(withSquareGreaterThanHouseList);
 
         //b) список квартир, имеющих заданное число комнат и расположенных на этаже, который находится в заданном промежутке;
         System.out.println("Enter the number of rooms:");
@@ -77,8 +70,6 @@ public class ClassesMainTaskMain { //Main tasks in Java Classes block
         System.out.println("Enter the maximum floor:");
         int maxFloor = HouseUtils.readIntFromConsole();
         List<House> byNumberOfRoomsAndFloorHouseList = HouseUtils.getHousesByNumberOfRoomsAndFloor(numberOfRooms, minFloor, maxFloor, initialHouseList);
-        for (House house : byNumberOfRoomsAndFloorHouseList) {
-            System.out.println(house.toString());
-        }
+        HouseUtils.outputList(byNumberOfRoomsAndFloorHouseList);
     }
 }
