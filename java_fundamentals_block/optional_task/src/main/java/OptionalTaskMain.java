@@ -14,7 +14,6 @@ public class OptionalTaskMain {
         System.out.println("The longest element is " + longestElement);
         System.out.println("The length of this element is " + OptionalTask1.elemLength(longestElement));
 
-
 //      Java.Fundamentals Optional Task 1. number 2 Вывести числа в порядке возрастания значений их длины.
         OptionalTask1.sortByLength(array);
 
