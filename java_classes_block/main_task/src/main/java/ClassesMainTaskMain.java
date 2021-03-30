@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main { //Main tasks in Java Classes block
+public class ClassesMainTaskMain { //Main tasks in Java Classes block
 
     public static void main(String[] args) {
 
