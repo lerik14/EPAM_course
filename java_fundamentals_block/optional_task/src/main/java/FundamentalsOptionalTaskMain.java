@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class OptionalTaskMain {
+public class FundamentalsOptionalTaskMain {
 
     public static void main(String[] args) throws IOException {
         int[] array = OptionalTask1.getElementsArrayFromConsole();

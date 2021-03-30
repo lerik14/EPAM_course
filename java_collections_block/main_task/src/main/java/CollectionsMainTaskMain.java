@@ -4,7 +4,7 @@ import Vegetables.Vegetable;
 
 import java.util.HashMap;
 
-public class MainTaskMain {
+public class CollectionsMainTaskMain {
 
     public static void main(String[] args) {
 

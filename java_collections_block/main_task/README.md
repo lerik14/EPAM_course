@@ -1,7 +1,7 @@
 # chef
 Task for Epam Java Collection course
 
-In this project you can find salad making functionality. The program contains list of ingredients (in Ingredients class) and two ready salads (in Main class) - Chef's and Russian salads.
+In this project you can find salad making functionality. The program contains list of ingredients (in Ingredients class) and two ready salads (in ClassesMainTaskMain class) - Chef's and Russian salads.
 
 After starting the program, you will see the following information in the console:
 1. Sorted list of ingredients by calorie content per 100 grams.
