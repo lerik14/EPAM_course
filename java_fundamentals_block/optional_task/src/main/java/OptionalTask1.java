@@ -76,10 +76,10 @@ public class OptionalTask1 {
     }
 
     public static double averageLength(int[] array) {
-        int commonLength = 0;
+        double commonLength = 0;
         for (int i = 0; i < array.length; i++) {
             commonLength += elemLength(array[i]);
         }
-        return (double) commonLength / array.length;
+        return commonLength / array.length;
     }
 }
