@@ -42,12 +42,12 @@ public class HouseUtils {
         return number;
     }
 
-    public static void outputList(List<House> houseList) {
+    public static void printHouseListToConsole(List<House> houseList) {
         if (!houseList.isEmpty()) {
             for (House house : houseList) {
                 System.out.println(house.toString());
             }
-        }else {
+        } else {
             System.out.println("No apartments with such parameters");
         }
     }

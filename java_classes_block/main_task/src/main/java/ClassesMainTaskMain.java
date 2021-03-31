@@ -54,13 +54,13 @@ public class ClassesMainTaskMain { //Main tasks in Java Classes block
         System.out.println("Enter the number of rooms:");
         int numberOfRooms = HouseUtils.readIntFromConsole();
         List<House> byNumberOfRoomsHouseList = HouseUtils.getHousesByNumberOfRooms(numberOfRooms, initialHouseList);
-        HouseUtils.outputList(byNumberOfRoomsHouseList);
+        HouseUtils.printHouseListToConsole(byNumberOfRoomsHouseList);
 
         //c) список квартир, имеющих площадь, превосходящую заданную.
         System.out.println("Enter the minimum square value:");
         int minSquare = HouseUtils.readIntFromConsole();
         List<House> withSquareGreaterThanHouseList = HouseUtils.getHousesWithSquareGreaterThan(minSquare, initialHouseList);
-       HouseUtils.outputList(withSquareGreaterThanHouseList);
+       HouseUtils.printHouseListToConsole(withSquareGreaterThanHouseList);
 
         //b) список квартир, имеющих заданное число комнат и расположенных на этаже, который находится в заданном промежутке;
         System.out.println("Enter the number of rooms:");
@@ -70,6 +70,6 @@ public class ClassesMainTaskMain { //Main tasks in Java Classes block
         System.out.println("Enter the maximum floor:");
         int maxFloor = HouseUtils.readIntFromConsole();
         List<House> byNumberOfRoomsAndFloorHouseList = HouseUtils.getHousesByNumberOfRoomsAndFloor(numberOfRooms, minFloor, maxFloor, initialHouseList);
-        HouseUtils.outputList(byNumberOfRoomsAndFloorHouseList);
+        HouseUtils.printHouseListToConsole(byNumberOfRoomsAndFloorHouseList);
     }
 }
