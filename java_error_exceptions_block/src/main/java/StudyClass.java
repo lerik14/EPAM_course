@@ -1,0 +1,3 @@
+public enum StudyClass {
+    MATH, ECONOMY, INFORMATICS, ENGLISH, ASTROLOGY
+}
