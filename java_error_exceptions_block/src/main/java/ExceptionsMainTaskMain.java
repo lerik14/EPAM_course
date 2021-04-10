@@ -1,4 +1,3 @@
-import javax.sound.midi.Soundbank;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -23,8 +22,8 @@ public class ExceptionsMainTaskMain {
         Student sidorov = new Student(4, "Sidorov Alex", group34);
         Student lebed = new Student(5, "Lebed Pavel", group56);
 
-//        ivanov.addMark(StudyClass.MATH, 6);
-//        ivanov.addMark(StudyClass.INFORMATICS, 3);
+        ivanov.addMark(StudyClass.MATH, 6);
+        ivanov.addMark(StudyClass.INFORMATICS, 3);
         sidorov.addMark(StudyClass.MATH, 5);
         zhukov.addMark(StudyClass.MATH, 9);
         petrov.addMark(StudyClass.MATH, 3);
