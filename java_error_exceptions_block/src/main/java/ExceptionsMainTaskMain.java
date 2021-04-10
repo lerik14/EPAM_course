@@ -1,19 +1,17 @@
-import java.util.Arrays;
+import javax.sound.midi.Soundbank;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public class ExceptionsMainTaskMain {
     public static void main(String[] args) {
 
-//        Throws exception because There is no faculty in the University
-//        System.out.println(MarkUtils.averageMarkInAllUniversity(StudyClass.MATH));
-
         Faculty informaticsFaculty = new Faculty("Faculty of Informatics");
         Faculty economicsFaculty = new Faculty("Faculty of Economics");
 
-
-        List<StudyClass> classesForGroup12 = Arrays.asList(StudyClass.MATH, StudyClass.INFORMATICS);
-        List<StudyClass> classesForGroup34 = Arrays.asList(StudyClass.MATH, StudyClass.ENGLISH);
-        List<StudyClass> classesForGroup56 = Arrays.asList(StudyClass.MATH, StudyClass.ECONOMY);
+        List<StudyClass> classesForGroup12 = asList(StudyClass.MATH, StudyClass.INFORMATICS);
+        List<StudyClass> classesForGroup34 = asList(StudyClass.MATH, StudyClass.ENGLISH);
+        List<StudyClass> classesForGroup56 = asList(StudyClass.MATH, StudyClass.ECONOMY);
 
         Group group12 = new Group(12, informaticsFaculty, classesForGroup12);
         Group group34 = new Group(34, informaticsFaculty, classesForGroup34);
@@ -25,16 +23,20 @@ public class ExceptionsMainTaskMain {
         Student sidorov = new Student(4, "Sidorov Alex", group34);
         Student lebed = new Student(5, "Lebed Pavel", group56);
 
-        ivanov.addMark(StudyClass.MATH, 6);
+//        ivanov.addMark(StudyClass.MATH, 6);
+//        ivanov.addMark(StudyClass.INFORMATICS, 3);
         sidorov.addMark(StudyClass.MATH, 5);
         zhukov.addMark(StudyClass.MATH, 9);
         petrov.addMark(StudyClass.MATH, 3);
         lebed.addMark(StudyClass.MATH, 5);
 
+        System.out.print("Average student's mark in all classes: ");
+        System.out.println(MarkUtils.averageStudentMarkInAllClasses(ivanov));
+        System.out.print("Average mark in the group: ");
         System.out.println(MarkUtils.averageClassMarkInGroup(StudyClass.MATH, group12));
+        System.out.print("Average mark in the faculty: ");
         System.out.println(MarkUtils.averageClassMarkInFaculty(StudyClass.MATH, informaticsFaculty));
+        System.out.print("Average mark in the university: ");
         System.out.println(MarkUtils.averageMarkInAllUniversity(StudyClass.MATH));
-
-
     }
 }

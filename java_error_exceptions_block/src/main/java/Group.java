@@ -4,8 +4,8 @@ import java.util.List;
 public class Group {
     private int groupNumber;
     private Faculty faculty;
-    public List<StudyClass> listOfClasses;
-    public static List<Group> listOfGroups = new ArrayList<>();
+    public List<StudyClass> listOfClasses; // list of classes in the group
+    public static List<Group> listOfGroups = new ArrayList<>(); //list of all groups in the University
 
     public Group(int groupNumber, Faculty faculty, List<StudyClass> listOfClasses) {
         this.faculty = faculty;

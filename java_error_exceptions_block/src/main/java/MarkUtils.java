@@ -9,11 +9,20 @@ public class MarkUtils {
      * @return Средняя оценка студента по всем предметам
      */
     public static double averageStudentMarkInAllClasses(Student student) {
-        int sum = 0;
-        for (int mark : student.listOfMarks.values()) {
-            sum += mark;
+        if (!student.listOfMarks.keySet().isEmpty()) {
+            int sum = 0;
+            try {
+                for (int mark : student.listOfMarks.values()) {
+                    sum += mark;
+                }
+                return (double) sum / student.listOfMarks.values().size();
+            } catch (NullPointerException e) {
+                System.out.println(student.getName() + " doesn't have marks");
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException(student.getName() + " doesn't have classes");
         }
-        return (double) sum / student.listOfMarks.values().size();
     }
 
     /**
@@ -100,18 +109,15 @@ public class MarkUtils {
     /**
      * Проверяет является ли передаваемый параметр NaN и выводит сообщение в таком случае.
      * @param averageMark - параметр, который необходимо проверить являкется ли он NaN;
-     * @param massage - сообщение, которые выводится в случае, если передаваемый параметр является NaN;
+     * @param message - сообщение, которые выводится в случае, если передаваемый параметр является NaN;
      * @return передаваемый параметр, если он не NaN или сообщение в противном случае;
      */
-    public static double checkNan(double averageMark, String massage) {
+    public static double checkNan(double averageMark, String message) {
         if (!Double.isNaN(averageMark)) {
             return averageMark;
         } else {
-            System.out.println(massage);
+            System.out.println(message);
             return 0;
         }
     }
-
-
-
 }
