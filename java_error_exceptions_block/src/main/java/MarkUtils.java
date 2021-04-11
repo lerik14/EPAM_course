@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MarkUtils {
@@ -11,15 +12,18 @@ public class MarkUtils {
     public static double averageStudentMarkInAllClasses(Student student) {
         if (!student.listOfMarks.keySet().isEmpty()) {
             int sum = 0;
-            try {
-                for (int mark : student.listOfMarks.values()) {
-                    sum += mark;
+            int numberOfMarks = 0;
+            for (Map.Entry<StudyClass, Integer> entry : student.listOfMarks.entrySet()) {
+                try {
+                    sum += entry.getValue();
+                    numberOfMarks++;
+                } catch (NullPointerException e) {
+                    System.out.println(student.getName() + " doesn't have mark in class " + entry.getKey());
                 }
-                return (double) sum / student.listOfMarks.values().size();
-            } catch (NullPointerException e) {
-                System.out.println(student.getName() + " doesn't have marks");
-                return 0;
             }
+            String msg = student.getName() + " doesn't have marks in all classes";
+            double averageMark = (double) sum / numberOfMarks;
+            return checkNan(averageMark, msg);
         } else {
             throw new IllegalArgumentException(student.getName() + " doesn't have classes");
         }
@@ -82,7 +86,7 @@ public class MarkUtils {
             String msg = "There is no specified class " + studyClass + " in the University";
             return checkNan(averageMark, msg);
         } else {
-            throw new IllegalArgumentException("There is no faculty in the University");
+            throw new NullPointerException("There is no faculty in the University");
         }
     }
 

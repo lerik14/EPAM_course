@@ -9,13 +9,19 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>error_and_exceptios_block</artifactId>
+    <artifactId>java_error_exceptions_block</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.16.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
