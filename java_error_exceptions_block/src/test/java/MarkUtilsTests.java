@@ -97,7 +97,7 @@ public class MarkUtilsTests {
     }
 
     @Test
-    public void averageClassMarkInGroupInCaseLackOfMarksInGroupTest() {
+    public void averageClassMarkInGroupInCaseLackOfMarksInGroupTest() { //Group34 doesn't have student with mark in math class
         assertEquals(0, MarkUtils.averageClassMarkInGroup(StudyClass.MATH, group34), 0.001);
     }
 
