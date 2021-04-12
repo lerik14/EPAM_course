@@ -11,6 +11,7 @@
 
     <modules>
         <module>clean_code_block</module>
+        <module>java_error_exceptions_block</module>
     </modules>
 
     <properties>
