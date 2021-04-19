@@ -10,7 +10,7 @@ import java.util.List;
 public class MainTaskMain {
     public static void main(String[] args) throws IOException {
         // You should input the absolute path to dir or txt file
-        //For example you can use java_io_block/main_task/data or java_io_block/main_task/input.txt
+        //For example you can use absolute path to java_io_block/main_task/data or java_io_block/main_task/input.txt
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
