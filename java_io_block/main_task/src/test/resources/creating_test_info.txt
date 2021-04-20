@@ -1,0 +1,12 @@
+||--test_data
+| |--dir2
+|  |--dir3
+|   |--dir4
+|    --1qwe.txt
+|   --2rtr.txt
+|   --4qwe.txt
+|  --5oyu.txt
+|  --3ngig.txt
+| --6.txt
+| --7.txt
+

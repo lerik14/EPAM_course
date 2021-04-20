@@ -15,7 +15,7 @@ public class MyFileReader {
      * @param path - absolute path to the txt file
      * @return list of file strings
      */
-    public static List<String> fileRead(String path) {
+    public static List<String> readFile(String path) {
         try {
             BufferedReader br = Files.newBufferedReader(Paths.get(path));
             return br.lines().collect(Collectors.toList());
@@ -45,19 +45,7 @@ public class MyFileReader {
     }
 
     public static double averageFilesAmountInDir(List<String> listOfLines) {
-        List<Integer> numberOfFilesInDir = new ArrayList<>();
-        for (int i = 0; i < listOfLines.size(); i++) {
-            if (listOfLines.get(i).contains(DirectoryReader.directoryPrefix)) {
-                List<String> sublist = listOfLines.subList(i, listOfLines.size());
-                numberOfFilesInDir.add(countFilesInDir(sublist));
-            }
-        }
-        int numOfDirs = numberOfFilesInDir.size(); // get number of directories
-        int numOfFiles = 0;
-        for (Integer elem : numberOfFilesInDir) {
-            numOfFiles += elem;
-        }
-        return (double) numOfFiles / numOfDirs;
+        return (double) countFiles(listOfLines) / countDirectories(listOfLines);
     }
 
     public static double averageFileNameSize(List<String> listOfLines) {

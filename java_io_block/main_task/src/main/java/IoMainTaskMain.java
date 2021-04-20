@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
-public class MainTaskMain {
+public class IoMainTaskMain {
     public static void main(String[] args) throws IOException {
         // You should input the absolute path to dir or txt file
         //For example you can use absolute path to java_io_block/main_task/data or java_io_block/main_task/input.txt
@@ -17,7 +17,7 @@ public class MainTaskMain {
 
         if (input.contains(".txt")) {
             //work with file
-            List<String> listOfStrings = MyFileReader.fileRead(input);
+            List<String> listOfStrings = MyFileReader.readFile(input);
             System.out.println("The number of directories is " + MyFileReader.countDirectories(listOfStrings));
             System.out.println("The number of files is " + MyFileReader.countFiles(listOfStrings));
             System.out.println("The average number of files per directory is " + MyFileReader.averageFilesAmountInDir(listOfStrings));
