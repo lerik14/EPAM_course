@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class Task1 {
 
-//    Ввести строки из файла, записать в список. Вывести строки в файл в обратном порядке.
+
 
     public static void task1() {
         String inputFileName = "java_collections_block/optional_tasks/src/main/resources/Input_file_for_task1.txt";
@@ -15,15 +15,13 @@ public class Task1 {
         List<String> listOfFileLines;
 
         try {
-            BufferedReader br = Files.newBufferedReader(Paths.get(inputFileName));//br returns as stream and convert it into a List
+            BufferedReader br = Files.newBufferedReader(Paths.get(inputFileName));
             listOfFileLines = br.lines().collect(Collectors.toList());
         } catch (IOException e) {
             throw new IllegalStateException("Cannot read file", e);
         }
 
-/*
-Sort of all lines in file
-*/
+
         Collections.reverse(listOfFileLines);
 
         try {

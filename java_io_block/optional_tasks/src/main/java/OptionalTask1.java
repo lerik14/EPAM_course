@@ -7,12 +7,14 @@ public class OptionalTask1 {
     // Создать и заполнить файл случайными целыми числами. Отсортировать содержимое файла по возрастанию.
 
     public static void task1() {
-        writeNumbersInFile();
-        writeSortedNumbersInFile();
+        String inputFileName = "java_io_block/optional_tasks/data/inputFileForTask1.txt";
+        String outputFileName = "java_io_block/optional_tasks/data/outputFileForTask1.txt";
+        writeNumbersInFile(inputFileName);
+        writeSortedNumbersInFile(inputFileName, outputFileName);
     }
 
-    public static void writeNumbersInFile() {
-        try (FileWriter inputFile = new FileWriter("java_io_block/optional_tasks/data/inputFileForTask1.txt")) {
+    public static void writeNumbersInFile(String inputFileName) {
+        try (FileWriter inputFile = new FileWriter(inputFileName)) {
             int[] array = new int[10];
             for (int i = 0; i < array.length; i++) {
                 array[i] = (int) (Math.random() * 100);
@@ -23,9 +25,9 @@ public class OptionalTask1 {
         }
     }
 
-    public static void writeSortedNumbersInFile() {
-        try (FileReader readFile = new FileReader("java_io_block/optional_tasks/data/inputFileForTask1.txt");
-             FileWriter writeFile = new FileWriter("java_io_block/optional_tasks/data/outputFileForTask1.txt")) {
+    public static void writeSortedNumbersInFile(String readFileName, String writeFileName) {
+        try (FileReader readFile = new FileReader(readFileName);
+             FileWriter writeFile = new FileWriter(writeFileName)) {
             List<Integer> listOfElements = new ArrayList<>();
             BufferedReader reader = new BufferedReader(readFile);
             String line = reader.readLine();

@@ -6,7 +6,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 public class DirectoryReader {
 
-    static String output = "";
+    public static String output = "";
     static String prefix = "|";
     static String filePrefix = "--";
     static String directoryPrefix = "|--";

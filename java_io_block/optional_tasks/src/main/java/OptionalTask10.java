@@ -6,8 +6,14 @@ public class OptionalTask10 {
 //    Прочитать строки из файла и поменять местами первое и последнее слова в каждой строке.
 
     public static void task10() {
-        try (FileReader readFile = new FileReader("java_io_block/optional_tasks/data/inputFileForTask10.txt");
-             FileWriter writeFile = new FileWriter("java_io_block/optional_tasks/data/outputFileForTask10.txt")) {
+        String readFileName = "java_io_block/optional_tasks/data/inputFileForTask10.txt";
+        String writeFileName = "java_io_block/optional_tasks/data/outputFileForTask10.txt";
+        replaceWordsInLine(readFileName, writeFileName);
+    }
+
+    public static void replaceWordsInLine(String readFileName, String writeFileName) {
+        try (FileReader readFile = new FileReader(readFileName);
+             FileWriter writeFile = new FileWriter(writeFileName)) {
             List<String> listOfElements = new ArrayList<>();
             BufferedReader reader = new BufferedReader(readFile);
             String line = reader.readLine();
