@@ -12,6 +12,7 @@
     <modules>
         <module>clean_code_block</module>
         <module>java_error_exceptions_block</module>
+        <module>java_io_block</module>
     </modules>
 
     <properties>
